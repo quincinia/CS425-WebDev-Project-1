@@ -1,2 +1,3 @@
-# CS425 WebDev Project 1
- Introductory project, getting used to HTML/CSS
+# CS425 WebDev Projects
+Project 1, getting used to HTML/CSS
+Project 2, using Vue
