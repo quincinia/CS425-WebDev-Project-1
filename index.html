@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CS425 WebDev Project 1</title>
+        <style>
+            body {
+                background: gray;
+            }
+            #submitted-forms {
+                max-width: 420px;
+                margin: auto;
+            }
+            ol {
+                counter-reset: list-count;
+                padding: 0;
+            }
+            li::marker {
+                content: counter(list-count) ")";
+            }
+            li {
+                border: 1px solid black;
+                background-color: lightblue;
+                padding: 10px;
+                margin: 10px;
+                list-style-position: inside;
+                counter-increment: list-count;
+                position: relative;
+            }
+            .info-container {
+                display: inline-block;
+                vertical-align: top;
+                margin-left: 12px;
+            }
+            p {
+                margin: 0;
+            }
+            .button {
+                border: 1px solid black;
+                background-color: gray;
+                position: absolute;
+                bottom: 8px;
+                cursor: pointer;
+                padding: 5px;
+            }
+            .edit {
+                right: 5em;
+            }
+            .delete {
+                right: 1em;
+            }
+            .row {
+                display: flex;
+                justify-content: space-between;
+            }
+            #info-form {
+                max-width: 400px;
+                margin: auto;
+            }
+            button {
+                display: block;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div id="submitted-forms">
+                <ol>
+                    <li>
+                        <div class="info-container">
+                            <p>Name: Joey</p>
+                            <p>Email: <a href="#">J@gmail.com</a></p>
+                            <p>Phone: 775-162-1620</p>
+                            <p>Description: Needed help</p>
+                        </div>
+                        <div class="button edit">Edit</div>
+                        <div class="button delete">Delete</div>
+                    </li>
+                    <li>
+                        <div class="info-container">
+                            <p>Name: Paul</p>
+                            <p>Email: <a href="#">P@gmail.com</a></p>
+                            <p>Phone: 775-155-1620</p>
+                            <p>Description: Needed help</p>
+                        </div>
+                        <div class="button edit">Edit</div>
+                        <div class="button delete">Delete</div>
+                    </li>
+                    <li>
+                        <div class="info-container">
+                            <p>Name: Jerry</p>
+                            <p>Email: <a href="#">JP@gmail.com</a></p>
+                            <p>Phone: 775-155-1434</p>
+                            <p>Description: Needed the manager</p>
+                        </div>
+                        <div class="button edit">Edit</div>
+                        <div class="button delete">Delete</div>
+                    </li>
+                    <li><div class="info-container">test item</div></li>
+                </ol>
+            </div>
+            <div id="info-form">
+                <form>
+                    <div class="row">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" />
+                    </div>
+
+                    <div class="row">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" />
+                    </div>
+
+                    <div class="row">
+                        <label for="phone">Phone:</label>
+                        <input type="text" name="phone" />
+                    </div>
+
+                    <div class="row">
+                        <label for="description">Description:</label>
+                        <input type="text" name="description" />
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
