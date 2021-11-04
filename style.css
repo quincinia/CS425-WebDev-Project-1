@@ -1,0 +1,57 @@
+body {
+    background: gray;
+}
+#submitted-forms {
+    max-width: 420px;
+    margin: auto;
+}
+ol {
+    counter-reset: list-count;
+    padding: 0;
+}
+li::marker {
+    content: counter(list-count) ")";
+}
+li {
+    border: 1px solid black;
+    background-color: lightblue;
+    padding: 10px;
+    margin: 10px;
+    list-style-position: inside;
+    counter-increment: list-count;
+    position: relative;
+}
+.info-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 12px;
+}
+p {
+    margin: 0;
+}
+.button {
+    border: 1px solid black;
+    background-color: gray;
+    position: absolute;
+    bottom: 8px;
+    cursor: pointer;
+    padding: 5px;
+}
+.edit {
+    right: 5em;
+}
+.delete {
+    right: 1em;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+#info-form {
+    max-width: 400px;
+    margin: auto;
+}
+button {
+    display: block;
+    margin: 0 auto;
+}
