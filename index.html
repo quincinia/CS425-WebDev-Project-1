@@ -7,70 +7,30 @@
         <title>CS425 WebDev Project 1</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        <script src="script.js"></script>
     </head>
     <body>
-        <main>
+        <main id="app">
             <div id="submitted-forms">
                 <ol>
-                    <li>
-                        <div class="info-container">
-                            <p>Name: Joey</p>
-                            <p>Email: <a href="#">J@gmail.com</a></p>
-                            <p>Phone: 775-162-1620</p>
-                            <p>Description: Needed help</p>
-                        </div>
-                        <div class="button edit">Edit</div>
-                        <div class="button delete">Delete</div>
-                    </li>
-                    <li>
-                        <div class="info-container">
-                            <p>Name: Paul</p>
-                            <p>Email: <a href="#">P@gmail.com</a></p>
-                            <p>Phone: 775-155-1620</p>
-                            <p>Description: Needed help</p>
-                        </div>
-                        <div class="button edit">Edit</div>
-                        <div class="button delete">Delete</div>
-                    </li>
-                    <li>
-                        <div class="info-container">
-                            <p>Name: Jerry</p>
-                            <p>Email: <a href="#">JP@gmail.com</a></p>
-                            <p>Phone: 775-155-1434</p>
-                            <p>Description: Needed the manager</p>
-                        </div>
-                        <div class="button edit">Edit</div>
-                        <div class="button delete">Delete</div>
-                    </li>
+                    <info-card
+                        v-for="(contact, key) in contacts"
+                        v-bind:key="key"
+                        v-bind:index="key"
+                        v-bind:name="contact.name"
+                        v-bind:email="contact.email"
+                        v-bind:phone="contact.phone"
+                        v-bind:description="contact.description"
+                    ></info-card>
                     <li><div class="info-container">test item</div></li>
                 </ol>
             </div>
             <div id="info-form">
-                <form>
-                    <div class="row">
-                        <label for="name">Name:</label>
-                        <input type="text" name="name" />
-                    </div>
-
-                    <div class="row">
-                        <label for="email">Email:</label>
-                        <input type="text" name="email" />
-                    </div>
-
-                    <div class="row">
-                        <label for="phone">Phone:</label>
-                        <input type="text" name="phone" />
-                    </div>
-
-                    <div class="row">
-                        <label for="description">Description:</label>
-                        <input type="text" name="description" />
-                    </div>
-
-                    <button type="submit">Submit</button>
-                </form>
+                <info-form
+                    v-bind:form_data="form_data"
+                    v-bind:key="fill_form"
+                ></info-form>
             </div>
         </main>
+        <script src="script.js"></script>
     </body>
 </html>
